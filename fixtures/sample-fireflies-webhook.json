@@ -1,0 +1,40 @@
+{
+  "meetingId": "FF-01JC0000000000000000000001",
+  "eventType": "Transcription completed",
+  "clientReferenceId": "acme-follow-up-2026-11-13",
+  "data": {
+    "id": "FF-01JC0000000000000000000001",
+    "title": "Acme Corp | Lead Routing Follow-up",
+    "date": 1794585600000,
+    "duration": 41.5,
+    "transcript_url": "https://fireflies.example.com/view/FF-01JC0000000000000000000001",
+    "organizer_email": "alex.rivera@example.com",
+    "participants": ["alex.rivera@example.com", "jane.doe@acme.example", "priya.patel@acme.example"],
+    "meeting_attendees": [
+      { "displayName": "Alex Rivera", "email": "alex.rivera@example.com" },
+      { "displayName": "Jane Doe", "email": "jane.doe@acme.example" },
+      { "displayName": "Priya Patel", "email": "priya.patel@acme.example" }
+    ],
+    "summary": {
+      "overview": "Follow-up with Acme Corp on lead routing. Priya Patel is sponsoring the project internally, budget is approved, and routing must be live before the new SDR cohort starts in April.",
+      "action_items": "Alex Rivera to send the security questionnaire and set up a pilot kickoff."
+    },
+    "sentences": [
+      { "index": 0, "speaker_name": "Alex Rivera", "start_time": 2.1, "end_time": 6.4, "text": "Picking up from last week. Where do things stand internally?" },
+      { "index": 1, "speaker_name": "Priya Patel", "start_time": 6.9, "end_time": 18.2, "text": "The core problem is still the manual handoff between marketing and sales. Leads sit untouched for days and that bottleneck is costing pipeline." },
+      { "index": 2, "speaker_name": "Alex Rivera", "start_time": 18.5, "end_time": 21.0, "text": "What target did leadership set?" },
+      { "index": 3, "speaker_name": "Jane Doe", "start_time": 21.4, "end_time": 31.8, "text": "Leadership wants speed-to-lead under 5 minutes and a 30% increase in meeting conversion this year." },
+      { "index": 4, "speaker_name": "Alex Rivera", "start_time": 32.0, "end_time": 34.1, "text": "Who is driving this on the Acme side?" },
+      { "index": 5, "speaker_name": "Priya Patel", "start_time": 34.5, "end_time": 42.0, "text": "I will champion this internally and I already walked the COO through the business case." },
+      { "index": 6, "speaker_name": "Jane Doe", "start_time": 42.3, "end_time": 49.9, "text": "The COO approves the final budget and signs off on vendors in this category." },
+      { "index": 7, "speaker_name": "Jane Doe", "start_time": 50.0, "end_time": 55.0, "text": "She is the decision-maker for anything that touches the revenue stack." },
+      { "index": 8, "speaker_name": "Alex Rivera", "start_time": 55.4, "end_time": 57.2, "text": "What does budget look like?" },
+      { "index": 9, "speaker_name": "Priya Patel", "start_time": 57.6, "end_time": 63.0, "text": "There is $45,000 budgeted for this in the current fiscal year." },
+      { "index": 10, "speaker_name": "Priya Patel", "start_time": 63.1, "end_time": 70.4, "text": "Must-haves are bi-directional HubSpot sync, round-robin routing, and audit logs." },
+      { "index": 11, "speaker_name": "Alex Rivera", "start_time": 70.8, "end_time": 72.9, "text": "How does the approval path work?" },
+      { "index": 12, "speaker_name": "Jane Doe", "start_time": 73.2, "end_time": 81.5, "text": "Security review first, then procurement issues the PO. Legal review usually takes two weeks." },
+      { "index": 13, "speaker_name": "Jane Doe", "start_time": 81.6, "end_time": 89.0, "text": "The team needs routing live by the end of March because the new SDR cohort starts in April." },
+      { "index": 14, "speaker_name": "Alex Rivera", "start_time": 89.4, "end_time": 95.0, "text": "Next step: I will send the security questionnaire and set up a pilot kickoff." }
+    ]
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "callData": {
+    "metaData": {
+      "id": "8800000000000000001",
+      "url": "https://gong.example.com/call?id=8800000000000000001",
+      "title": "Acme Corp | Discovery and Qualification",
+      "scheduled": "2026-11-12T15:00:00Z",
+      "started": "2026-11-12T15:02:10Z",
+      "duration": 2280,
+      "direction": "Conference",
+      "system": "Zoom",
+      "scope": "External",
+      "media": "Video",
+      "language": "eng"
+    },
+    "context": [
+      {
+        "system": "HubSpot",
+        "objects": [
+          { "objectType": "Deal", "objectId": "1000000001", "fields": [] },
+          { "objectType": "Account", "objectId": "2000000001", "fields": [] }
+        ]
+      }
+    ],
+    "parties": [
+      { "id": "p1", "name": "Alex Rivera", "emailAddress": "alex.rivera@example.com", "affiliation": "Internal", "speakerId": "1001" },
+      { "id": "p2", "name": "Jane Doe", "emailAddress": "jane.doe@acme.example", "affiliation": "External", "speakerId": "1002", "title": "VP of Operations" },
+      { "id": "p3", "name": "John Smith", "emailAddress": "john.smith@acme.example", "affiliation": "External", "speakerId": "1003", "title": "CFO" }
+    ],
+    "content": {
+      "brief": "Acme Corp is evaluating a replacement for a manual weekly forecasting process. The CFO owns sign-off and the target go-live is the end of Q1."
+    },
+    "transcript": [
+      { "speakerId": "1001", "topic": "Intro", "sentences": [ { "start": 1000, "end": 6000, "text": "Thanks for making the time today, Jane and John." }, { "start": 6000, "end": 9000, "text": "What prompted the evaluation?" } ] },
+      { "speakerId": "1002", "topic": "Pain", "sentences": [ { "start": 9500, "end": 18000, "text": "Honestly, the quarter-end reporting process is broken." }, { "start": 18000, "end": 26000, "text": "My team rebuilds the pipeline forecast manually in spreadsheets every week and it takes about 20 hours." } ] },
+      { "speakerId": "1001", "sentences": [ { "start": 26500, "end": 29000, "text": "What would a good outcome look like?" } ] },
+      { "speakerId": "1002", "sentences": [ { "start": 29500, "end": 38000, "text": "If forecast prep dropped by 75 percent and forecast error came down to under 10%, it would pay for itself." }, { "start": 38000, "end": 44000, "text": "I need a single source of truth for pipeline data that syncs with HubSpot automatically." } ] },
+      { "speakerId": "1001", "sentences": [ { "start": 44500, "end": 47000, "text": "Understood. Who else weighs in on a decision like this?" } ] },
+      { "speakerId": "1003", "topic": "Decision", "sentences": [ { "start": 47500, "end": 56000, "text": "I'm the CFO. I sign off on any software spend over $50,000 and I make the final decision on this one." }, { "start": 56000, "end": 61000, "text": "The money sits in the operations line, roughly $60k per year." } ] },
+      { "speakerId": "1001", "sentences": [ { "start": 61500, "end": 64000, "text": "What criteria will you use to compare vendors?" } ] },
+      { "speakerId": "1002", "sentences": [ { "start": 64500, "end": 72000, "text": "The must-haves are native HubSpot integration, SOC 2 Type II, and role-based permissions." }, { "start": 72000, "end": 77000, "text": "You can reach the IT lead at it.lead@acme.example or 555-201-3344 for the security questions." } ] },
+      { "speakerId": "1001", "sentences": [ { "start": 77500, "end": 80000, "text": "And the path from here to a signed agreement?" } ] },
+      { "speakerId": "1003", "sentences": [ { "start": 80500, "end": 89000, "text": "After a technical demo it goes through IT security review, then procurement, then legal review of the MSA." } ] },
+      { "speakerId": "1002", "topic": "Timeline", "sentences": [ { "start": 89500, "end": 98000, "text": "Timing matters too. The board wants this live by the end of Q1 so the new forecast process can launch at the April kickoff." } ] },
+      { "speakerId": "1001", "topic": "Next Steps", "sentences": [ { "start": 98500, "end": 104000, "text": "Next step: I will send over a proposal and schedule a technical demo with your IT lead." } ] }
+    ]
+  }
+}
