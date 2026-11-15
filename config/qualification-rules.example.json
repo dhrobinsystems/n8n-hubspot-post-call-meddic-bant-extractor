@@ -1,0 +1,154 @@
+{
+  "$comment": "Copy to config/qualification-rules.local.json (git-ignored) and replace stage IDs with the internal IDs from your own HubSpot pipelines. Stage IDs below are HubSpot's defaults for the standard 'Sales Pipeline'.",
+  "version": 1,
+  "defaultPipelineId": "default",
+  "defaults": {
+    "minConfidence": 0.6,
+    "requireGroundedEvidence": true,
+    "alertOnUnknownStage": true
+  },
+  "fieldOverrides": {
+    "economic_buyer": { "minConfidence": 0.7 },
+    "budget": { "minConfidence": 0.65 }
+  },
+  "scoringWeights": {
+    "metrics": 12,
+    "economic_buyer": 14,
+    "decision_criteria": 10,
+    "decision_process": 10,
+    "identify_pain": 12,
+    "champion": 12,
+    "budget": 8,
+    "authority": 6,
+    "need": 8,
+    "timeline": 8
+  },
+  "pipelines": {
+    "default": {
+      "label": "Sales Pipeline",
+      "stageOrder": [
+        "appointmentscheduled",
+        "qualifiedtobuy",
+        "presentationscheduled",
+        "decisionmakerboughtin",
+        "contractsent",
+        "closedwon"
+      ],
+      "terminalStages": ["closedwon", "closedlost"],
+      "stages": {
+        "appointmentscheduled": {
+          "label": "Appointment Scheduled",
+          "requiredToEnter": [],
+          "blockAdvance": false,
+          "slack": { "alertOnMissing": false }
+        },
+        "qualifiedtobuy": {
+          "label": "Qualified To Buy",
+          "requiredToEnter": ["identify_pain", "need", "timeline"],
+          "blockAdvance": true,
+          "slack": { "alertOnMissing": true, "mentionOwner": false, "severity": "warning" }
+        },
+        "presentationscheduled": {
+          "label": "Presentation Scheduled",
+          "requiredToEnter": ["identify_pain", "need", "timeline", "metrics", "champion"],
+          "blockAdvance": true,
+          "slack": { "alertOnMissing": true, "mentionOwner": false, "severity": "warning" }
+        },
+        "decisionmakerboughtin": {
+          "label": "Decision Maker Bought-In",
+          "requiredToEnter": [
+            "identify_pain",
+            "need",
+            "timeline",
+            "metrics",
+            "champion",
+            "economic_buyer",
+            "authority",
+            "budget",
+            "decision_criteria"
+          ],
+          "blockAdvance": true,
+          "slack": { "alertOnMissing": true, "mentionOwner": true, "severity": "high" }
+        },
+        "contractsent": {
+          "label": "Contract Sent",
+          "requiredToEnter": [
+            "identify_pain",
+            "need",
+            "timeline",
+            "metrics",
+            "champion",
+            "economic_buyer",
+            "authority",
+            "budget",
+            "decision_criteria",
+            "decision_process"
+          ],
+          "minConfidence": 0.7,
+          "blockAdvance": true,
+          "slack": { "alertOnMissing": true, "mentionOwner": true, "severity": "critical" }
+        },
+        "closedwon": {
+          "label": "Closed Won",
+          "requiredToEnter": [
+            "identify_pain",
+            "need",
+            "timeline",
+            "metrics",
+            "champion",
+            "economic_buyer",
+            "authority",
+            "budget",
+            "decision_criteria",
+            "decision_process"
+          ],
+          "minConfidence": 0.7,
+          "blockAdvance": true,
+          "slack": { "alertOnMissing": true, "mentionOwner": true, "severity": "critical" }
+        },
+        "closedlost": {
+          "label": "Closed Lost",
+          "requiredToEnter": [],
+          "blockAdvance": false,
+          "slack": { "alertOnMissing": false }
+        }
+      }
+    }
+  },
+  "notifications": {
+    "alertOnUnmatchedDeal": true,
+    "alertOnAmbiguousDeal": true,
+    "sendDealBriefOnPass": true
+  },
+  "hubspotPropertyMap": {
+    "fields": {
+      "metrics": { "value": "meddic_metrics", "confidence": "meddic_metrics_confidence" },
+      "economic_buyer": { "value": "meddic_economic_buyer", "confidence": "meddic_economic_buyer_confidence" },
+      "decision_criteria": { "value": "meddic_decision_criteria", "confidence": "meddic_decision_criteria_confidence" },
+      "decision_process": { "value": "meddic_decision_process", "confidence": "meddic_decision_process_confidence" },
+      "identify_pain": { "value": "meddic_identify_pain", "confidence": "meddic_identify_pain_confidence" },
+      "champion": { "value": "meddic_champion", "confidence": "meddic_champion_confidence" },
+      "budget": { "value": "bant_budget", "confidence": "bant_budget_confidence" },
+      "authority": { "value": "bant_authority", "confidence": "bant_authority_confidence" },
+      "need": { "value": "bant_need", "confidence": "bant_need_confidence" },
+      "timeline": { "value": "bant_timeline", "confidence": "bant_timeline_confidence" }
+    },
+    "summary": {
+      "score": "qualification_score",
+      "gateStatus": "qualification_gate_status",
+      "missingFields": "qualification_missing_fields",
+      "lastExtractedAt": "qualification_last_extracted_at",
+      "sourceCallId": "qualification_source_call_id"
+    }
+  },
+  "propertyWrite": {
+    "enabled": true,
+    "minConfidenceToWrite": 0.5,
+    "requireGroundedEvidence": true,
+    "allowOverwriteWithLowerConfidence": false,
+    "maxValueLength": 2000
+  },
+  "note": {
+    "enabled": true
+  }
+}
