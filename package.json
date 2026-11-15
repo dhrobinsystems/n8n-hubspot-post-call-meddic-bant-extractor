@@ -1,0 +1,55 @@
+{
+  "name": "n8n-hubspot-post-call-meddic-bant-extractor",
+  "version": "1.0.0",
+  "description": "n8n workflow + deterministic Node.js mirror that extracts MEDDIC and BANT qualification from Gong, Fireflies.ai and Fathom call transcripts, upserts HubSpot deal properties, logs a qualification note and flags missing stage-gate criteria in Slack. DRY_RUN and SANDBOX_MODE by default.",
+  "type": "module",
+  "main": "src/index.js",
+  "bin": {
+    "meddic-bant-extractor": "src/index.js"
+  },
+  "scripts": {
+    "start": "node src/index.js",
+    "test": "node --test tests/extractor.test.js",
+    "validate:schema": "node src/index.js --validate-schema",
+    "simulate": "node src/index.js --simulate",
+    "build:workflow": "node scripts/build-n8n-workflow.js"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "dependencies": {},
+  "devDependencies": {},
+  "keywords": [
+    "n8n",
+    "hubspot",
+    "meddic",
+    "bant",
+    "sales-qualification",
+    "revops",
+    "gong",
+    "fireflies",
+    "fathom",
+    "llm",
+    "structured-output"
+  ],
+  "author": {
+    "name": "DH Robin | dhRobin Systems",
+    "url": "https://dhrobinsystems.com"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dhrobinsystems/n8n-hubspot-post-call-meddic-bant-extractor.git"
+  },
+  "homepage": "https://github.com/dhrobinsystems/n8n-hubspot-post-call-meddic-bant-extractor#readme",
+  "files": [
+    "src/",
+    "scripts/",
+    "config/qualification-rules.example.json",
+    "workflows/",
+    "fixtures/",
+    "README.md",
+    "LICENSE",
+    "DISCLAIMER.md"
+  ]
+}
