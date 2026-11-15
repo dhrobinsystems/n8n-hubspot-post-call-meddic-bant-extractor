@@ -45,6 +45,8 @@ Both flags are **fail-safe**: only an explicit `false`, `0`, `no`, or `off` disa
 
 ## Architecture
 
+![n8n HubSpot Post-Call MEDDIC/BANT Extractor Workflow](assets/n8n-workflow.png)
+
 ```
  ┌──────────┐  ┌──────────────┐  ┌──────────┐
  │   Gong   │  │ Fireflies.ai │  │  Fathom  │   post-call webhooks (or a relay that enriches them)
